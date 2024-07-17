@@ -13,11 +13,5 @@
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240529.0",
     "wrangler": "^3.57.2"
-  },
-  "version": "1.0.0",
-  "description": "``` npm install npm run dev ```",
-  "main": "index.js",
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  }
 }
