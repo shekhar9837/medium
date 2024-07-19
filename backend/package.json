@@ -3,11 +3,12 @@
   "scripts": {
     "dev": "wrangler dev src/index.ts",
     "deploy": "wrangler deploy --minify src/index.ts"
-    
   },
   "dependencies": {
     "@prisma/client": "^5.17.0",
     "@prisma/extension-accelerate": "^1.1.0",
+    "@shekhar9837/medium-common": "^1.0.2",
+    "cors": "^2.8.5",
     "hono": "^4.4.13",
     "prisma": "^5.17.0"
   },
