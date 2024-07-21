@@ -39,7 +39,7 @@ userRouter.post('/signup', async (c) => {
 
       const jwt =await sign({ id: user.id }, c.env.JWT_SECRET);
 
-      return c.text(jwt);
+      return c.json({jwt});
   } catch (e) {
       console.log(e);
       c.status(500); // 500 Internal Server Error for server-side issues

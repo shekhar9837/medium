@@ -55,30 +55,30 @@ blogRouter.post('/',async (c) => {
 })
 
 
-blogRouter.get('/',async (c) => {
-	const body =await c.req.json()
-    const prisma = new PrismaClient({
-        datasourceUrl: c.env?.DATABASE_URL,
-    }).$extends(withAccelerate())
-    try{  
-          const blog  = await prisma.post.findFirst({
-        where:{
-            id: body.id
-        },
-    })
+// blogRouter.get('/',async (c) => {
+// 	const body =await c.req.json()
+//     const prisma = new PrismaClient({
+//         datasourceUrl: c.env?.DATABASE_URL,
+//     }).$extends(withAccelerate())
+//     try{  
+//           const blog  = await prisma.post.findFirst({
+//         where:{
+//             id: body.id
+//         },
+//     })
 
-	return c.json({
-         blog
-    })
+// 	return c.json({
+//          blog
+//     })
 
-    }catch (err) {
-        c.status(404)
-        return c.json({
-            error: "error while fetching post"
-        })
-    }
+//     }catch (err) {
+//         c.status(404)
+//         return c.json({
+//             error: "error while fetching post"
+//         })
+//     }
 
-})
+// })
 
 
 
@@ -126,7 +126,7 @@ blogRouter.get('/:id', async (c) => {
     try {
         const blog = await prisma.post.findFirst({
             where: {
-                id: id
+                id: Number(id)
             },
             select: {
                 id: true,
