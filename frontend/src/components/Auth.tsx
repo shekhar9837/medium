@@ -10,7 +10,7 @@ export const Auth = ({ type }: { type: "signup" | "signin" }) => {
     username: "",
     password: "",
   });
-  const BACKEND_URL = process.env.VITE_BACKEND_URL;
+  const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
   async function sendRequest() {
     try {
         const response = await axios.post(`${BACKEND_URL}/api/v1/user/${type === "signup" ? "signup" : "signin"}`, postInputs);
