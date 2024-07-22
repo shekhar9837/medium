@@ -18,8 +18,8 @@ export const Auth = ({ type }: { type: "signup" | "signin" }) => {
         const jwt =await response.data.jwt;
         localStorage.setItem("token", jwt);
         navigate("/blogs");
-    } catch(e) {
-        alert("user not found")
+    } catch(e: any) {
+        alert("request failed: " + e.message);
         // alert the user here that the request failed
     }
 }
